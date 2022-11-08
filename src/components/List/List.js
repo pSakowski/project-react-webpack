@@ -1,6 +1,6 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column'
-// import ColumnForm from '../ColumnForm/ColumnForm'
+import ColumnForm from '../ColumnForm/ColumnForm'
 
 import { useSelector } from 'react-redux';
 
@@ -54,7 +54,6 @@ const List = () => {
   //   })
   
     // setColumns(columnsUpdated);
-  
 
 
   return (
@@ -66,7 +65,7 @@ const List = () => {
       <section className={styles.columns}>
         {columns.map(column => <Column key={column.id} {...column} />)}
       </section>
-      {/* <ColumnForm action={addColumn} /> */}
+      <ColumnForm /* action={addColumn} */ />
     </div>
   );
 };
