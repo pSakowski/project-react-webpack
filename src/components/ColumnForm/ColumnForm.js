@@ -4,16 +4,17 @@ import TextInput from '../TextInput/TextInput';
 
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import shortid from 'shortid';
 
-const ColumnForm = props => {
+const ColumnForm = () => {
 
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
     
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
         dispatch({ type: 'ADD_COLUMN', payload: { title, icon } });
         console.log('dispatch', ({ type: 'ADD_COLUMN', newColumn: { title, icon } }))
         setTitle('');
@@ -22,9 +23,6 @@ const ColumnForm = props => {
 
 	return (
         <form className={styles.columnForm} onSubmit={handleSubmit}>
-            {/* Title: <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
-            Icon: <input type="text" value={icon} onChange={e => setIcon(e.target.value)} /> */}
-
             <span>Title:</span> <TextInput value={title} onChange={e => setTitle(e.target.value)} /> 
             <span>Icon:</span>  <TextInput value={icon} onChange={e => setIcon(e.target.value)} />
             <Button>Add column</Button>
