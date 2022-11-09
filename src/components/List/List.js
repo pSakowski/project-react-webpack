@@ -42,7 +42,7 @@ const List = () => {
   // ]);
 
   // const addColumn = newColumn => {
-	// 	setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [], }]);
+	// 	columns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [], }]);
   // };
 
   // const addCard = (newCard, columnId) => {
@@ -53,7 +53,8 @@ const List = () => {
   //       return column
   //   })
   
-    // setColumns(columnsUpdated);
+  //   columns(columnsUpdated);
+  // }
 
 
   return (
@@ -65,7 +66,7 @@ const List = () => {
       <section className={styles.columns}>
         {columns.map(column => <Column key={column.id} {...column} />)}
       </section>
-      <ColumnForm  />
+      <ColumnForm />
     </div>
   );
 };

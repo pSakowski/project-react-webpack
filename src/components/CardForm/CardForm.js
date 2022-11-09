@@ -4,6 +4,7 @@ import TextInput from './../TextInput/TextInput';
 
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import shortid from 'shortid';
 
 const CardForm = props => {
 
@@ -12,8 +13,8 @@ const CardForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'ADD_CARD', payload: { title, columnId: props.columnId } });
-        console.log('ADD_CARD' , { type: 'ADD_CARD', title, columnId: props.columnId })
+        dispatch({ type: 'ADD_CARD', payload: { id: shortid(), columnId: props.columnId, title: title }});
+        console.log('ADD_CARD',{ id: shortid(), columnId: props.columnId, title: title })
         setTitle('');
     };
     
