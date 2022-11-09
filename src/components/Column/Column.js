@@ -3,10 +3,13 @@ import Card from '../Card/Card.js'
 import CardForm from '../CardForm/CardForm';
 
 import { useSelector } from 'react-redux';
+import initialState from '../../redux/initialState';
 
 const Column = props => {
 
-    const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id && card.title.toLowerCase().includes(state.searchString.toLowerCase())));
+    const cards = useSelector(state => state.cards).filter(card => card.columnId === props.id && card.title.toLowerCase().includes(initialState.searchString.toLowerCase()));
+
+    // const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id && card.title.toLowerCase().includes(state.searchString.toLowerCase())));
     
     return (
         <article className={styles.column}>
@@ -14,7 +17,7 @@ const Column = props => {
             <ul className={styles.cards}>
 	            {cards.map(card => <Card key={card.id} {...card} />)}
             </ul>
-            <CardForm columnId={props.id} />
+            <CardForm columnId={props.id}/>
         </article>
     );
 };

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 
 import initialState from './initialState';
 
-const reducer = (state, action) => {
+const reducer = (state, action, columnId) => {
   switch(action.type) {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { id: shortid(), ...action.payload }]};
