@@ -5,6 +5,7 @@ import Button from '../Button/Button';
 
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { updateString } from '../../redux/store';
 
 const SearchForm = () => {
 
@@ -14,8 +15,9 @@ const SearchForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'UPDATE_SEARCHSTRING', payload: searchString });
-        console.log('searchString', ({ type: 'UPDATE_SEARCHSTRING', searchString }))
+        // dispatch({ type: 'UPDATE_SEARCHSTRING', payload: searchString });
+        dispatch(updateString( searchString ));
+        // console.log('searchString', { searchString })
      };
 
     return (
