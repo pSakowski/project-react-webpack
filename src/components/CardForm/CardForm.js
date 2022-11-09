@@ -5,7 +5,6 @@ import { addCard } from '../../redux/store';
 
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import shortid from 'shortid';
 
 const CardForm = props => {
 
