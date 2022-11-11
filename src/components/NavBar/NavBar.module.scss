@@ -33,4 +33,9 @@
     color: white;
     text-decoration: none;
   }
+
+  .linkActive {
+    color: $color-warning;
+    font-size: 25px;
+  }
 }
