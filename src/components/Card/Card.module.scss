@@ -1,13 +1,26 @@
-@import '../../styles/settings.scss';
+@import "../../styles/settings.scss";
 
 .card {
-    position: relative;
-    background: $color-light;
-    border: 1px solid lighten($color-dark, 60%);
-    padding: $base-size;
-    margin: 0 0 $base-size 0;
-    border-radius: $radius;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+  position: relative;
+  background: $color-light;
+  border: 1px solid lighten($color-dark, 60%);
+  padding: $base-size;
+  margin: 0 0 $base-size 0;
+  border-radius: $radius;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.button {
+  border: none;
+  background-color: white;
+
+  :hover {
+    color: $color-warning;
+  }
+}
+
+.isActive {
+  color: green;
 }
