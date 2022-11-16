@@ -22,5 +22,6 @@
 }
 
 .isActive {
-  color: green;
+  color: $color-success;
+  transform: scale(110%);
 }

@@ -2,17 +2,15 @@ import styles from './Card.module.scss'
 import clsx from 'clsx';
 
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { toggleCardFavorite } from '../../redux/store';
 
 const Card = props => {
-    const dispatch = useDispatch();
 
-    const [ isFavorite, setIsFavorite ] = useState(props.isFavorite)
+    const dispatch = useDispatch();
 
     const handleClick = e => {
         e.preventDefault();
-        dispatch(!isFavorite);
-        setIsFavorite('');
+        dispatch(toggleCardFavorite(props.id));
      };
 
     return (
