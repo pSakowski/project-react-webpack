@@ -7,21 +7,31 @@
   padding: $base-size;
   margin: 0 0 $base-size 0;
   border-radius: $radius;
-  display: flex;
-  justify-content: space-between;
+  list-style: none;
   font-weight: bold;
 }
 
 .button {
   border: none;
   background-color: white;
+  float: right;
 
   :hover {
-    color: $color-warning;
+    color: $color-success;
   }
 }
 
 .isActive {
   color: $color-success;
   transform: scale(110%);
+}
+
+.remove {
+  border: none;
+  background-color: white;
+  float: right;
+
+  :hover {
+    color: $color-warning;
+  }
 }
